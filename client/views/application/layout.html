@@ -1,8 +1,9 @@
 <template name="layout">
+    {{> bertAlert}}
     <div class="container">
        {{> header}}
         <div id="main" class="row-fluid">
-          {{> yield}}
+            {{> Template.dynamic template=yield}}
         </div>
     </div>
 </template>

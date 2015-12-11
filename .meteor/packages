@@ -26,7 +26,6 @@ accounts-password
 themeteorchef:bert
 themeteorchef:jquery-validation
 twbs:bootstrap
-iron:router
 digilord:faker
 check
 meteorhacks:ssr
@@ -36,3 +35,5 @@ aldeed:collection2
 harrison:papa-parse
 fortawesome:fontawesome
 reactive-var
+kadira:flow-router
+kadira:blaze-layout

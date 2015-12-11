@@ -3,7 +3,7 @@ var administrators = [
     name: { first: 'Admin', last: 'McAdmin' },
     email: 'admin' + Meteor.settings.private.subDomain,
     username: 'boss',
-    password: 'password'
+    password: Meteor.settings.private.defaultPassword
   }
 ];
 
@@ -76,7 +76,7 @@ var _generateFakeUsers = function( count ) {
       name: { first: faker.name.firstName(), last: faker.name.lastName() },
       email: faker.internet.email(),
       username: faker.internet.userName(),
-      password: 'password'
+      password: Meteor.settings.private.defaultPassword
     });
   }
 

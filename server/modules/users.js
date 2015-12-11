@@ -55,5 +55,6 @@ var updateUserInfoFile = function (userData) {
     Accounts.setPassword(Meteor.userId(), userData.password);
 };
 
+
 TMModules.server.createInvitationsInBulk = createInvitationsInBulk;
 TMModules.server.updateUserInfoFile = updateUserInfoFile;

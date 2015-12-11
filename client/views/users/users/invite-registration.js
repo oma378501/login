@@ -1,4 +1,7 @@
-Template.inviteRegistration.onCreated( function() {});
+Template.inviteRegistration.onCreated(function() {
+  Template.instance().subscribe('invite', FlowRouter.current().params.token)
+});
+
 
 Template.inviteRegistration.helpers({
   invitation: function() {
@@ -12,7 +15,7 @@ Template.inviteRegistration.helpers({
 
 Template.inviteRegistration.events({
   'submit form': function( event, template ) {
-    var route = Router.current(),
+    var route = FlowRouter.current(),
       token = route.params.token;
 
     event.preventDefault();
@@ -34,10 +37,10 @@ Template.inviteRegistration.events({
 
     Meteor.call( 'acceptInvite', user, function( error, response ) {
       if ( error ) {
-        console.log('error saving invitation');
         console.log(error);
+        Bert.alert( error.reason, 'warning' );
       } else {
-        Router.go('/login');
+        FlowRouter.go('login');
         Meteor.loginWithPassword( user.email, password );
       }
     });

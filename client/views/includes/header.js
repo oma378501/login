@@ -7,6 +7,15 @@ Template.header.helpers({
     }
 
     return !Roles.userIsInRole(loggedInUser, 'student');
+  },
+  canBeStudent: function(){
+    var loggedInUser = Meteor.user();
+
+    if(loggedInUser == undefined){
+      return false;
+    }
+    return !Roles.userIsInRole(loggedInUser, 'admin');
+
   }
 });
 
